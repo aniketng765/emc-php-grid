@@ -20,6 +20,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 // Route::get('/customers', 'CustomerController@index');
 Route::get('/customers', array("as" => "customers", 'uses' => 'CustomerController@index'));
 
-Route::get('/addCustomer', array("as" => "addcustomer", 'uses' => 'CustomerController@addCustomer'));
-Route::get('/searchCustomer', array("as" => "searchcustomer", 'uses' => 'CustomerController@searchCustomer'));
+// Route::post('/addCustomer', array("as" => "addcustomer", 'uses' => 'CustomerController@addCustomer'));
+Route::post('/addCustomer', 'CustomerController@addCustomer');
 
+Route::get('/searchCustomer', array("as" => "searchCustomers", 'uses' => 'CustomerController@searchCustomer'));
+
+Route::post('/getCustomer', 'CustomerController@getCustomer');

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="csrf-token" content="{{ csrf_token() }}" value="{{ csrf_token() }}">
 
     <title>EMC</title>
 
@@ -57,7 +57,11 @@
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 
                                     <a class="dropdown-item" href="{{ route('customers') }}" >
-                                        Customers
+                                        Upload Customers
+                                    </a>
+
+                                    <a class="dropdown-item" href="{{ route('searchCustomers') }}" >
+                                        Search Customers
                                     </a>
 
                                     <a class="dropdown-item" href="{{ route('logout') }}"
@@ -74,6 +78,7 @@
                         @endguest
                     </ul>
                 </div>
+                
             </div>
         </nav>
 
@@ -81,7 +86,7 @@
             @yield('content')
         </main>
     </div>
-
+<div id="loading" style="display: none" > </div>
     
 </body>
 </html>
